@@ -1,0 +1,259 @@
+{
+    "meta": {
+        "last_updated_at": "2025-02-24T23:59:59Z"
+    },
+    "data": {
+        "USD": {
+            "code": "USD",
+            "value": 0.0105595714
+        },
+        "EUR": {
+            "code": "EUR",
+            "value": 0.010093368
+        },
+        "GBP": {
+            "code": "GBP",
+            "value": 0.0083705737
+        },
+        "JPY": {
+            "code": "JPY",
+            "value": 1.5827180439
+        },
+        "CNY": {
+            "code": "CNY",
+            "value": 0.0765449714
+        },
+        "INR": {
+            "code": "INR",
+            "value": 0.915264539
+        },
+        "AUD": {
+            "code": "AUD",
+            "value": 0.016661
+        },
+        "CAD": {
+            "code": "CAD",
+            "value": 0.01507643
+        },
+        "CHF": {
+            "code": "CHF",
+            "value": 0.0094783784
+        },
+        "NZD": {
+            "code": "NZD",
+            "value": 0.0184434557
+        },
+        "SEK": {
+            "code": "SEK",
+            "value": 0.1126470972
+        },
+        "NOK": {
+            "code": "NOK",
+            "value": 0.1175255067
+        },
+        "DKK": {
+            "code": "DKK",
+            "value": 0.0753008443
+        },
+        "PLN": {
+            "code": "PLN",
+            "value": 0.041770503
+        },
+        "CZK": {
+            "code": "CZK",
+            "value": 0.2518574339
+        },
+        "HUF": {
+            "code": "HUF",
+            "value": 4.0467411266
+        },
+        "BGN": {
+            "code": "BGN",
+            "value": 0.0196985673
+        },
+        "RON": {
+            "code": "RON",
+            "value": 0.0502348464
+        },
+        "HRK": {
+            "code": "HRK",
+            "value": 0.0708610709
+        },
+        "MXN": {
+            "code": "MXN",
+            "value": 0.2162455805
+        },
+        "BRL": {
+            "code": "BRL",
+            "value": 0.061037291
+        },
+        "ARS": {
+            "code": "ARS",
+            "value": 11.1984988896
+        },
+        "CLP": {
+            "code": "CLP",
+            "value": 9.972878435
+        },
+        "COP": {
+            "code": "COP",
+            "value": 43.4814062967
+        },
+        "PEN": {
+            "code": "PEN",
+            "value": 0.0389781309
+        },
+        "UYU": {
+            "code": "UYU",
+            "value": 0.4529556261
+        },
+        "AED": {
+            "code": "AED",
+            "value": 0.0387910134
+        },
+        "SAR": {
+            "code": "SAR",
+            "value": 0.0395559485
+        },
+        "EGP": {
+            "code": "EGP",
+            "value": 0.5345294963
+        },
+        "ZAR": {
+            "code": "ZAR",
+            "value": 0.1939070217
+        },
+        "GHS": {
+            "code": "GHS",
+            "value": 0.1632388576
+        },
+        "NGN": {
+            "code": "NGN",
+            "value": 15.847603738
+        },
+        "KES": {
+            "code": "KES",
+            "value": 1.3673028624
+        },
+        "MAD": {
+            "code": "MAD",
+            "value": 0.1050726081
+        },
+        "TND": {
+            "code": "TND",
+            "value": 0.0333675118
+        },
+        "IQD": {
+            "code": "IQD",
+            "value": 13.8166504489
+        },
+        "SGD": {
+            "code": "SGD",
+            "value": 0.0141400072
+        },
+        "HKD": {
+            "code": "HKD",
+            "value": 0.0820738563
+        },
+        "KRW": {
+            "code": "KRW",
+            "value": 15.0753349444
+        },
+        "TWD": {
+            "code": "TWD",
+            "value": 0.3458632743
+        },
+        "THB": {
+            "code": "THB",
+            "value": 0.3539810679
+        },
+        "MYR": {
+            "code": "MYR",
+            "value": 0.0465747912
+        },
+        "IDR": {
+            "code": "IDR",
+            "value": 171.688177214
+        },
+        "PHP": {
+            "code": "PHP",
+            "value": 0.6113822569
+        },
+        "VND": {
+            "code": "VND",
+            "value": 268.9585156372
+        },
+        "BDT": {
+            "code": "BDT",
+            "value": 1.2852275355
+        },
+        "PKR": {
+            "code": "PKR",
+            "value": 2.9516932103
+        },
+        "RUB": {
+            "code": "RUB",
+            "value": 0.9309845681
+        },
+        "UAH": {
+            "code": "UAH",
+            "value": 0.440677696
+        },
+        "KZT": {
+            "code": "KZT",
+            "value": 5.2772417823
+        },
+        "GEL": {
+            "code": "GEL",
+            "value": 0.0297479
+        },
+        "BYN": {
+            "code": "BYN",
+            "value": 0.0345300293
+        },
+        "AMD": {
+            "code": "AMD",
+            "value": 4.1619369089
+        },
+        "AZN": {
+            "code": "AZN",
+            "value": 0.0179512713
+        },
+        "TRY": {
+            "code": "TRY",
+            "value": 0.384966425
+        },
+        "ISK": {
+            "code": "ISK",
+            "value": 1.4629434756
+        },
+        "LKR": {
+            "code": "LKR",
+            "value": 3.1255753845
+        },
+        "QAR": {
+            "code": "QAR",
+            "value": 0.0384444485
+        },
+        "OMR": {
+            "code": "OMR",
+            "value": 0.0040577272
+        },
+        "BHD": {
+            "code": "BHD",
+            "value": 0.0039703988
+        },
+        "JOD": {
+            "code": "JOD",
+            "value": 0.0074972957
+        },
+        "DZD": {
+            "code": "DZD",
+            "value": 1.4266568666
+        },
+        "MUR": {
+            "code": "MUR",
+            "value": 0.4863325255
+        }
+    }
+}
