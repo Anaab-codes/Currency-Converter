@@ -65,69 +65,9 @@ conversion_history = []
 # ---------------------------
 # Conversion Function
 # ---------------------------
-'''def convert(event=None):  
+def convert_amount():
     try:
-        # Determine which entry field triggered the event
-        source_entry = event.widget if event else None
-
-        if source_entry == initial_amount_entry or source_entry is None:
-            # User is typing in the initial amount (or clicked the button)
-            amount = float(initial_amount_entry.get()) if initial_amount_entry.get().strip() else 0
-            reverse = False  # Normal conversion
-        elif source_entry == target_amount_entry:
-            # User is typing in the target amount (reverse conversion)
-            amount = float(target_amount_entry.get()) if target_amount_entry.get().strip() else 0
-            reverse = True  # Reverse conversion
-        else:
-            return  # If neither entry triggered, exit
-
-    except ValueError:
-        amount = 0  # Default to 0 if input is invalid
-    
-    if amount == 0:
-        return
-
-    try:
-        initial_currency = initial_currency_var.get()
-        target_currency = target_currency_var.get()
-        
-        if not initial_currency or not target_currency:
-            messagebox.showerror("Selection Error", "Please select both currencies.")
-            return
-        if initial_currency == target_currency:
-            messagebox.showwarning("Invalid Selection", "Currencies cannot be the same!")
-            return
-
-        rates = custom_rates_data["data"] if use_custom_data else get_exchange_rates()
-        
-        if initial_currency not in rates or target_currency not in rates:
-            messagebox.showerror("Data Error", "One of the selected currencies is not available in the current data.")
-            return
-        
-        # Perform conversion based on input direction
-        initial_rate = rates[initial_currency]["value"]
-        target_rate = rates[target_currency]["value"]
-
-        if reverse:
-            converted_amount = amount * (initial_rate / target_rate)  # Reverse conversion
-            initial_amount_entry.delete(0, tk.END)
-            initial_amount_entry.insert(0, f"{converted_amount:.2f}")
-        else:
-            converted_amount = amount * (target_rate / initial_rate)  # Normal conversion
-            target_amount_entry.delete(0, tk.END)
-            target_amount_entry.insert(0, f"{converted_amount:.2f}")
-
-        # Store conversion in history
-        result_text = f"{amount} {initial_currency} = {converted_amount:.2f} {target_currency}"
-        conversion_history.append(result_text)
-
-    except Exception as e:
-        messagebox.showerror("Error", f"An unexpected error occurred: {e}")'''
-
-
-def convert_amount(event=None):
-    try:
-        amount = float(initial_amount_entry.get()) if initial_amount_entry.get().strip() else 0
+        amount = float(amount_entry.get())
         initial_currency = initial_currency_var.get()
         target_currency = target_currency_var.get()
         
@@ -139,14 +79,12 @@ def convert_amount(event=None):
             return
 
         # Choose data source based on toggle
-        # Choose data source based on toggle
-        rates = custom_rates_data["data"] if use_custom_data else get_exchange_rates()
-        # if use_custom_data:
-        #     rates = custom_rates_data["data"]
-        # else:
-        #     rates = get_exchange_rates()
-        #     if rates is None:
-        #         return
+        if use_custom_data:
+            rates = custom_rates_data["data"]
+        else:
+            rates = get_exchange_rates()
+            if rates is None:
+                return
         
         if initial_currency not in rates or target_currency not in rates:
             messagebox.showerror("Data Error", "One of the selected currencies is not available in the current data.")
@@ -159,61 +97,12 @@ def convert_amount(event=None):
         converted_amount = amount * conversion_factor
         
         result_text = f"{amount} {initial_currency} = {converted_amount:.2f} {target_currency}"
-        # converted_amount_label.configure(text=result_text)
-        
-        # Update the target amount entry
-        target_amount_entry.delete(0, tk.END)
-        target_amount_entry.insert(0, f"{converted_amount:.2f}")
-        
+        converted_amount_label.configure(text=result_text)
         # Store conversion in history
         conversion_history.append(result_text)
 
     except ValueError:
-        print(ValueError)
         messagebox.showerror("Input Error", "Please enter a valid numerical amount.")
-        
-def reverse_convert_amount(event=None):
-    try:
-        amount = float(initial_amount_entry.get()) if initial_amount_entry.get().strip() else 0
-
-        amount = float(target_amount_entry.get()) if target_amount_entry.get().strip() else 0
-        initial_currency = initial_currency_var.get()
-        target_currency = target_currency_var.get()
-        
-        if not initial_currency or not target_currency:
-            messagebox.showerror("Selection Error", "Please select both currencies.")
-            return
-        if initial_currency == target_currency:
-            messagebox.showwarning("Invalid Selection", "Currencies cannot be the same!")
-            return
-
-        # if not initial_currency or not target_currency:
-        #     return
-
-        rates = custom_rates_data["data"] if use_custom_data else get_exchange_rates()
-        
-        if initial_currency not in rates or target_currency not in rates:
-            messagebox.showerror("Data Error", "One of the selected currencies is not available in the current data.")
-            return
-        
-        # if rates is None or initial_currency not in rates or target_currency not in rates:
-        #     return
-
-        # Reverse conversion
-        initial_rate = rates[initial_currency]["value"]
-        target_rate = rates[target_currency]["value"]
-        converted_amount = amount * (initial_rate / target_rate)
-
-        # Update the initial amount entry
-        initial_amount_entry.delete(0, tk.END)
-        initial_amount_entry.insert(0, f"{converted_amount:.2f}")
-
-    except ValueError:
-        return
-
-# initial_amount_entry.bind("<KeyRelease>", convert_amount)
-# target_amount_entry.bind("<KeyRelease>", reverse_convert_amount)
-
 
 # ---------------------------
 # Toggle Data Source Functionality
@@ -298,18 +187,10 @@ target_currency_var = ctk.StringVar(value="EUR")
 
 
 # Initial Currency ComboBox
-initial_currency_menu = ctk.CTkComboBox(app, values=currency_list, variable=initial_currency_var, width=170)
+initial_currency_menu = ctk.CTkComboBox(
+    app, values=currency_list, variable=initial_currency_var, width=170)
 initial_currency_menu.place(x=30, y=10)
 initial_currency_menu.bind("<KeyRelease>", lambda event: update_dropdown(event, initial_currency_menu, initial_currency_var))
-
-
-# Entry under Initial Currency
-initial_amount_entry = ctk.CTkEntry(app, width=170)
-initial_amount_entry.place(x=30, y=50)
-initial_amount_entry.bind("<KeyRelease>", convert_amount)  # Convert on typing
-
-
-
 
 # Target Currency ComboBox
 target_currency_menu = ctk.CTkComboBox(
@@ -318,30 +199,24 @@ target_currency_menu.place(x=300, y=10)
 target_currency_menu.bind("<KeyRelease>", lambda event: update_dropdown(event, target_currency_menu, target_currency_var))
 
 
-# Entry under Target Currency
-target_amount_entry = ctk.CTkEntry(app, width=170)
-target_amount_entry.place(x=300, y=50)
-target_amount_entry.bind("<KeyRelease>", reverse_convert_amount)  # Prevent typing
-
-
-
-# amount_entry = ctk.CTkEntry(app, width=140, placeholder_text="Enter amount")
-# amount_entry.place(x=180, y=60)
+amount_entry = ctk.CTkEntry(app, width=140, placeholder_text="Enter amount")
+amount_entry.place(x=180, y=60)
 
 convert_button = ctk.CTkButton(app, text="Convert",command=convert_amount)
-convert_button.place(x=180, y=200)
+convert_button.place(x=180, y=100)
 
+converted_amount_label = ctk.CTkLabel(app, text="Converted Amount", width=150)
+converted_amount_label.place(x=180, y=140)
 
 # Label to display the current data source
 data_source_label = ctk.CTkLabel(app, text="Current Data Source: Custom Data")
-data_source_label.place(x=180, y=100)
+data_source_label.place(x=180, y=180)
 
 # Toggle button to switch between custom data and API data
-toggle_button = ctk.CTkButton(app, text="Switch to API Data", command=toggle_data_source)
-toggle_button.place(x=180, y=150)
+# toggle_button = ctk.CTkButton(app, text="Switch to API Data", command=toggle_data_source)
+# toggle_button.grid(row=5, column=1, padx=10, pady=10)
 
 app.mainloop()
-
 
 
 
