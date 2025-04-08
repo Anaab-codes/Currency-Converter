@@ -2,6 +2,8 @@ import tkinter as tk
 import customtkinter as ctk
 import requests
 import json
+import os
+from dotenv import load_dotenv
 from tkinter import messagebox
 
 # ---------------------------
@@ -22,7 +24,8 @@ with open('custom_rates.json', 'r') as f:  # Load the JSON data
 # ------------------------------------
 # API Configuration (unchanged aside from removing refresh)
 # ------------------------------------
-API_KEY = "cur_live_1mSuanw4qX2TYNrlnqNFPTOeGxlUF5ZdwqZnvF3z"
+load_dotenv()
+API_KEY = os.getenv("API_KEY1")
 BASE_URL = "https://api.currencyapi.com/v3/latest"
 
 def get_exchange_rates():
