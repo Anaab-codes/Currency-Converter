@@ -24,14 +24,18 @@ app.configure(bg="#FCFBFB")
 # icon = ctk.CTkImage(light_image=Image.open("images/currency_converter_icon.png"), size=(32, 32))
 # icon_label = ctk.CTkLabel(app, image=icon, text="")
 
-# # # Load the background image
+
+
+
+
+# # # # Load the background image
 bg_image = ctk.CTkImage(light_image=Image.open("images/background_icon.jpg"), 
                         dark_image=Image.open("images/background_icon.jpg"), 
                         size=(800, 500))
 
 # # Create a label to hold the background image
-bg_label = ctk.CTkLabel(app, image=bg_image, text="")  
-bg_label.place(x=0, y=0, relwidth=1, relheight=1)  # Cover full window
+# bg_label = ctk.CTkLabel(app, image=bg_image, text="")  
+# bg_label.place(x=0, y=0, relwidth=1, relheight=1)  # Cover full window
 
 # # Add other widgets on top of the background
 # label = ctk.CTkLabel(app, text="Welcome!", font=("Arial", 24))
@@ -41,49 +45,49 @@ bg_label.place(x=0, y=0, relwidth=1, relheight=1)  # Cover full window
 # button.place(relx=0.5, rely=0.5, anchor="center")
 
 # Create Canvas for Background Animation
-# canvas = tk.Canvas(app, width=700, height=400, bg="#F4F4F4", highlightthickness=0)
-# canvas.pack(fill="both", expand=True)
+canvas = tk.Canvas(app, width=700, height=400, bg="#F4F4F4", highlightthickness=0)
+canvas.pack(fill="both", expand=True)
 
-# # List of Currency Symbols
-# currency_symbols = ["$", "€", "¥", "£", "₿", "₹", "₩", "₦"]
+# List of Currency Symbols
+currency_symbols = ["$", "€", "¥", "£", "₿", "₹", "₩", "₦"]
 
-# # Store floating items with direction values
-# floating_icons = []
+# Store floating items with direction values
+floating_icons = []
 
-# for _ in range(25):  # Number of icons
-#     x = random.randint(50, 650)
-#     y = random.randint(50, 350)
-#     size = random.randint(25, 50)
-#     color = random.choice(["#FFD700", "#C0C0C0", "#DAA520"])  # Expensive colors
+for _ in range(25):  # Number of icons
+    x = random.randint(50, 650)
+    y = random.randint(50, 350)
+    size = random.randint(25, 50)
+    color = random.choice(["#FFD700", "#C0C0C0", "#DAA520"])  # Expensive colors
     
-#     symbol = random.choice(currency_symbols)
-#     text_id = canvas.create_text(x, y, text=symbol, font=("Arial", size, "bold"), fill=color)
+    symbol = random.choice(currency_symbols)
+    text_id = canvas.create_text(x, y, text=symbol, font=("Arial", size, "bold"), fill=color)
     
-#     dx = random.choice([-1, 1]) * random.uniform(0.5, 1.5)
-#     dy = random.choice([-1, 1]) * random.uniform(0.5, 1.5)
+    dx = random.choice([-1, 1]) * random.uniform(0.5, 1.5)
+    dy = random.choice([-1, 1]) * random.uniform(0.5, 1.5)
     
-#     floating_icons.append({"id": text_id, "dx": dx, "dy": dy})
+    floating_icons.append({"id": text_id, "dx": dx, "dy": dy})
 
-# # Animate Floating Icons
-# def animate_icons():
-#     for icon in floating_icons:
-#         text_id = icon["id"]
-#         dx = icon["dx"]
-#         dy = icon["dy"]
+# Animate Floating Icons
+def animate_icons():
+    for icon in floating_icons:
+        text_id = icon["id"]
+        dx = icon["dx"]
+        dy = icon["dy"]
         
-#         canvas.move(text_id, dx, dy)
-#         x, y = canvas.coords(text_id)
+        canvas.move(text_id, dx, dy)
+        x, y = canvas.coords(text_id)
 
-#         # Bounce horizontally
-#         if x < 0 or x > 700:
-#             icon["dx"] *= -1
-#         # Bounce vertically
-#         if y < 0 or y > 400:
-#             icon["dy"] *= -1
+        # Bounce horizontally
+        if x < 0 or x > 700:
+            icon["dx"] *= -1
+        # Bounce vertically
+        if y < 0 or y > 400:
+            icon["dy"] *= -1
 
-#     app.after(30, animate_icons)  # Persistent animation loop
+    app.after(30, animate_icons)  # Persistent animation loop
 
-# animate_icons()
+animate_icons()
 
 # ---------------------------
 # Load Custom Data from JSON file
@@ -192,6 +196,8 @@ frames = [
 ]
 frame_index = 0
 
+
+
 # Animation loop
 def update_gif():
     global frame_index
@@ -296,95 +302,6 @@ def convert(event=None, store_history=False):
         frame_label.lower()
         convert_button.configure(state="normal")
 
-
-
-# ---------------------------
-# Conversion Function
-# ---------------------------
-# def convert(event=None, store_history=False):
-#     try:
-#         # Get selected currencies
-#         initial_currency = initial_currency_var.get()
-#         target_currency = target_currency_var.get()
-#         if not initial_currency or not target_currency:
-#             messagebox.showerror("Selection Error", "Please select both currencies.")
-#             return
-#         if initial_currency == target_currency:
-#             messagebox.showwarning("Invalid Selection", "Currencies cannot be the same!")
-#             return
-
-#         # Choose the rates data source
-#         rates = custom_rates_data["data"] if use_custom_data else get_exchange_rates()
-#         if rates is None or initial_currency not in rates or target_currency not in rates:
-#             messagebox.showerror("Data Error", "One of the selected currencies is not available in the current data.")
-#             return
-
-#         initial_rate = rates[initial_currency]["value"]
-#         target_rate = rates[target_currency]["value"]
-
-#         # If the conversion is triggered by the button press (no event provided)
-#         if event is None:
-#             # Determine which field to use as source.
-#             # If one is empty, use the other.
-#             initial_val = initial_amount_entry.get().strip()
-#             target_val = target_amount_entry.get().strip()
-
-#             if last_focused == "initial" or (initial_val and not target_val):
-#                 if not initial_val:
-#                     messagebox.showerror("Input Error", "Please enter a value in the initial amount field.")
-#                     return
-#                 amount = float(initial_val)
-#                 converted = amount * (target_rate / initial_rate)
-#                 target_amount_entry.delete(0, tk.END)
-#                 target_amount_entry.insert(0, f"{converted:.2f}")
-#             elif last_focused == "target" or (target_val and not initial_val):
-#                 if not target_val:
-#                     messagebox.showerror("Input Error", "Please enter a value in the target amount field.")
-#                     return
-#                 amount = float(target_val)
-#                 converted = amount * (initial_rate / target_rate)
-#                 initial_amount_entry.delete(0, tk.END)
-#                 initial_amount_entry.insert(0, f"{converted:.2f}")
-                
-#             # If both fields have values, default to converting from the last-focused field
-#             elif initial_val and target_val:
-#                 if last_focused == "initial":
-#                     amount = float(initial_val)
-#                     converted = amount * (target_rate / initial_rate)
-#                     target_amount_entry.delete(0, tk.END)
-#                     target_amount_entry.insert(0, f"{converted:.2f}")
-#                 elif last_focused == "target":
-#                     amount = float(target_val)
-#                     converted = amount * (initial_rate / target_rate)
-#                     initial_amount_entry.delete(0, tk.END)
-#                     initial_amount_entry.insert(0, f"{converted:.2f}")
-#                 else:
-#                     # Default to initial to target if last_focused is somehow not set
-#                     amount = float(initial_val)
-#                     converted = amount * (target_rate / initial_rate)
-#                     target_amount_entry.delete(0, tk.END)
-#                     target_amount_entry.insert(0, f"{converted:.2f}")
-#             else:
-#                 messagebox.showerror("Input Error", "Please enter a value in one of the amount fields.")
-#                 return
-
-#             # Optionally, store the conversion history using the initial field’s amount
-#             if store_history:
-#                 # Use the initial amount entry as the source for history (could adjust as needed)
-#                 amount = float(initial_amount_entry.get().strip() or 0)
-#                 converted = amount * (target_rate / initial_rate)
-#                 conversion_history.append({
-#                     "amount": amount,
-#                     "initial_currency": initial_currency,
-#                     "target_currency": target_currency,
-#                     "converted_amount": round(converted, 2),
-#                     "timestamp": datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-#                 })
-#                 save_history()
-
-#     except ValueError:
-#         messagebox.showerror("Input Error", "Please enter a valid numerical amount.")
-
 # ---------------------------
 # Toggle Data Source Functionality
 # ---------------------------
@@ -394,14 +311,21 @@ def toggle_data_source():
 
 # Function to filter and auto-expand the dropdown
 def update_dropdown(event, combobox, currency_var):
-    search_term = currency_var.get().upper()
-    filtered_currencies = [c for c in currency_list if c.startswith(search_term)]  # Filter list
+    # Get current input and preserve cursor position
+    current_value = currency_var.get()
+    cursor_pos = combobox.index(tk.INSERT)
+    
+    # Filter currencies that START WITH the input string
+    search_term = current_value.upper()
+    filtered_currencies = [c for c in currency_list if c.startswith(search_term)]
 
-    if filtered_currencies:
-        combobox["values"] = filtered_currencies  # Update dropdown with filtered values
-        combobox.event_generate("<Down>")  # Force dropdown to expand
+    # Update values quietly
+    if search_term:
+        combobox["values"] = filtered_currencies
     else:
-        combobox["values"] = currency_list  # Reset if no match
+        combobox["values"] = currency_list
+
+        
 
 # Styling function to match CustomTkinter look
 def style_combobox(combobox):
@@ -409,22 +333,8 @@ def style_combobox(combobox):
     combobox.option_add("*TCombobox*Listbox.background", "#2C2F33")  # Dark background
     combobox.option_add("*TCombobox*Listbox.foreground", "white")  # White text
 
-
-
-# Function to filter and update dropdown
-# def update_dropdown(event, combobox, currency_var):
-#     search_term = currency_var.get().upper()
-#     filtered_currencies = [c for c in currency_list if c.startswith(search_term)]
-#     if filtered_currencies:
-#         combobox.configure(values=filtered_currencies)
-#         combobox.set(search_term)
-#         combobox.master.update_idletasks()
-#         combobox.event_generate("<FocusIn>")
-#     else:
-#         combobox.configure(values=currency_list)
-
 # ---------------------------
-# History Functionality (unchanged)
+# History Functionality
 # ---------------------------
 history_window = None
 
@@ -467,18 +377,6 @@ def show_history():
     # Create a CustomTkinter button
     clear_button = ctk.CTkButton(history_window, text="Clear History", command=clear_history, fg_color="red",image=icon, compound="left")
     clear_button.pack(pady=12)
-        
-    # clear_button = tk.Button(history_window, text="Clear History", command=clear_history, bg="red")
-    # clear_button.pack(pady=12)
-    
-    
-    # # Load the image (ensure the image is in the same directory or provide full path)
-    # clear_img = tk.PhotoImage(file="delete_icon.png")  # Replace with your image path
-
-    # # Create a button with an image
-    # clear_button = tk.Button(root, text="Clear History", image=clear_img, compound="left",
-    #                      command=clear_history, bg="red", fg="white", font=("Arial", 12))
-    # clear_button.pack(pady=12)
     
 
 def clear_history():
@@ -562,27 +460,3 @@ app.mainloop()
 
 
 
-
-
-
-
-# # Initialize the CustomTkinter app
-# ctk.set_appearance_mode("dark")  # You can use "light" or "system" mode
-# app = ctk.CTk()
-# app.geometry("800x500")  # Set window size
-
-# # Load the background image
-# bg_image = ctk.CTkImage(light_image=Image.open("background.jpg"), 
-#                         dark_image=Image.open("background.jpg"), 
-#                         size=(800, 500))
-
-# # Create a label to hold the background image
-# bg_label = ctk.CTkLabel(app, image=bg_image, text="")  
-# bg_label.place(x=0, y=0, relwidth=1, relheight=1)  # Cover full window
-
-# # Add other widgets on top of the background
-# label = ctk.CTkLabel(app, text="Welcome!", font=("Arial", 24))
-# label.place(relx=0.5, rely=0.3, anchor="center")
-
-# button = ctk.CTkButton(app, text="Click Me")
-# button.place(relx=0.5, rely=0.5, anchor="center")

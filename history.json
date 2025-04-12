@@ -1,537 +1,79 @@
 [
     {
-        "amount": 5565.0,
-        "initial_currency": "USD",
-        "target_currency": "EUR",
-        "converted_amount": 5319.31,
-        "timestamp": "2025-03-29 20:47:30"
+        "amount": 9.0,
+        "initial_currency": "ZMK",
+        "target_currency": "JEP",
+        "converted_amount": 0.0,
+        "timestamp": "2025-04-10 19:11:51"
     },
     {
-        "amount": 10460.84,
-        "initial_currency": "USD",
-        "target_currency": "EUR",
-        "converted_amount": 9999.0,
-        "timestamp": "2025-03-29 20:47:38"
+        "amount": 9.0,
+        "initial_currency": "ZMK",
+        "target_currency": "JEP",
+        "converted_amount": 0.0,
+        "timestamp": "2025-04-10 19:11:54"
     },
     {
-        "amount": 344.0,
-        "initial_currency": "USD",
-        "target_currency": "EUR",
-        "converted_amount": 328.81,
-        "timestamp": "2025-04-03 03:55:50"
+        "amount": 9567.0,
+        "initial_currency": "ZMK",
+        "target_currency": "JEP",
+        "converted_amount": 0.83,
+        "timestamp": "2025-04-10 19:12:05"
     },
     {
-        "amount": 34395.56,
-        "initial_currency": "USD",
-        "target_currency": "EUR",
-        "converted_amount": 32877.0,
-        "timestamp": "2025-04-03 03:56:01"
+        "amount": 95674566.0,
+        "initial_currency": "ZMK",
+        "target_currency": "JEP",
+        "converted_amount": 8289.88,
+        "timestamp": "2025-04-10 19:12:17"
     },
     {
-        "amount": 3439625.94,
-        "initial_currency": "USD",
-        "target_currency": "EUR",
-        "converted_amount": 3287767.0,
-        "timestamp": "2025-04-03 03:56:19"
+        "amount": 95674566.0,
+        "initial_currency": "ZMK",
+        "target_currency": "JEP",
+        "converted_amount": 8289.88,
+        "timestamp": "2025-04-10 19:12:24"
     },
     {
-        "amount": 566.0,
-        "initial_currency": "USD",
+        "amount": 32.0,
+        "initial_currency": "DAI",
         "target_currency": "EUR",
-        "converted_amount": 541.01,
-        "timestamp": "2025-04-03 18:34:50"
+        "converted_amount": 29.19,
+        "timestamp": "2025-04-10 20:15:06"
     },
     {
-        "amount": 566.0,
-        "initial_currency": "USD",
+        "amount": 32.0,
+        "initial_currency": "DAI",
         "target_currency": "EUR",
-        "converted_amount": 541.01,
-        "timestamp": "2025-04-03 18:34:51"
+        "converted_amount": 29.19,
+        "timestamp": "2025-04-10 20:15:08"
     },
     {
-        "amount": 5802.16,
-        "initial_currency": "USD",
-        "target_currency": "EUR",
-        "converted_amount": 5546.0,
-        "timestamp": "2025-04-03 18:35:21"
-    },
-    {
-        "amount": 5802.16,
-        "initial_currency": "USD",
-        "target_currency": "EUR",
-        "converted_amount": 5546.0,
-        "timestamp": "2025-04-03 18:35:23"
-    },
-    {
-        "amount": 455.0,
-        "initial_currency": "USD",
-        "target_currency": "EUR",
-        "converted_amount": 434.91,
-        "timestamp": "2025-04-03 19:01:43"
-    },
-    {
-        "amount": 455.0,
-        "initial_currency": "USD",
-        "target_currency": "EUR",
-        "converted_amount": 434.91,
-        "timestamp": "2025-04-03 19:01:52"
-    },
-    {
-        "amount": 77.0,
-        "initial_currency": "USD",
-        "target_currency": "EUR",
-        "converted_amount": 73.6,
-        "timestamp": "2025-04-03 19:07:34",
-        "last_focused": "initial_currency"
-    },
-    {
-        "amount": 813.94,
-        "initial_currency": "USD",
-        "target_currency": "EUR",
-        "converted_amount": 778.0,
-        "timestamp": "2025-04-03 19:07:55",
-        "last_focused": "initial_currency"
-    },
-    {
-        "amount": 813.94,
-        "initial_currency": "USD",
-        "target_currency": "EUR",
-        "converted_amount": 778.0,
-        "timestamp": "2025-04-03 19:07:56",
-        "last_focused": "initial_currency"
-    },
-    {
-        "amount": 43.0,
-        "initial_currency": "USD",
-        "target_currency": "EUR",
-        "converted_amount": 41.1,
-        "timestamp": "2025-04-03 19:17:12"
-    },
-    {
-        "amount": 42.89,
-        "initial_currency": "USD",
-        "target_currency": "EUR",
-        "converted_amount": 41.0,
-        "timestamp": "2025-04-03 19:17:21"
-    },
-    {
-        "amount": 56.0,
-        "initial_currency": "USD",
-        "target_currency": "EUR",
-        "converted_amount": 53.53,
-        "timestamp": "2025-04-03 20:57:27"
-    },
-    {
-        "amount": 160.62,
-        "initial_currency": "USD",
-        "target_currency": "EUR",
-        "converted_amount": 153.53,
-        "timestamp": "2025-04-03 20:57:34"
-    },
-    {
-        "amount": 68.0,
-        "initial_currency": "USD",
-        "target_currency": "EUR",
-        "converted_amount": 65.0,
-        "timestamp": "2025-04-05 01:00:06"
-    },
-    {
-        "amount": 4.2,
+        "amount": 66.0,
         "initial_currency": "USD",
         "target_currency": "GHS",
-        "converted_amount": 64.93,
-        "timestamp": "2025-04-05 01:00:32"
+        "converted_amount": 1019.63,
+        "timestamp": "2025-04-12 18:40:52"
     },
     {
-        "amount": 55.0,
-        "initial_currency": "GHS",
-        "target_currency": "EUR",
-        "converted_amount": 3.4,
-        "timestamp": "2025-04-05 01:22:39"
-    },
-    {
-        "amount": 55.0,
+        "amount": 0.97,
         "initial_currency": "USD",
-        "target_currency": "EUR",
-        "converted_amount": 50.12,
-        "timestamp": "2025-04-05 14:54:37"
+        "target_currency": "GHS",
+        "converted_amount": 14.99,
+        "timestamp": "2025-04-12 18:41:14"
     },
     {
-        "amount": 71.33,
+        "amount": 1.04,
         "initial_currency": "USD",
-        "target_currency": "EUR",
-        "converted_amount": 65.0,
-        "timestamp": "2025-04-05 14:54:56"
+        "target_currency": "GHS",
+        "converted_amount": 16.07,
+        "timestamp": "2025-04-12 18:41:42"
     },
     {
-        "amount": 71.33,
+        "amount": 60.0,
         "initial_currency": "USD",
-        "target_currency": "EUR",
-        "converted_amount": 65.0,
-        "timestamp": "2025-04-05 14:54:58"
-    },
-    {
-        "amount": 566.0,
-        "initial_currency": "USD",
-        "target_currency": "EUR",
-        "converted_amount": 515.78,
-        "timestamp": "2025-04-05 15:29:02"
-    },
-    {
-        "amount": 55.0,
-        "initial_currency": "USD",
-        "target_currency": "EUR",
-        "converted_amount": 50.12,
-        "timestamp": "2025-04-05 16:03:44"
-    },
-    {
-        "amount": 555.0,
-        "initial_currency": "USD",
-        "target_currency": "EUR",
-        "converted_amount": 505.76,
-        "timestamp": "2025-04-05 16:52:56"
-    },
-    {
-        "amount": 77.0,
-        "initial_currency": "USD",
-        "target_currency": "EUR",
-        "converted_amount": 70.17,
-        "timestamp": "2025-04-05 16:53:08"
-    },
-    {
-        "amount": 974.45,
-        "initial_currency": "USD",
-        "target_currency": "EUR",
-        "converted_amount": 888.0,
-        "timestamp": "2025-04-05 16:53:15"
-    },
-    {
-        "amount": 766.0,
-        "initial_currency": "USD",
-        "target_currency": "EUR",
-        "converted_amount": 698.04,
-        "timestamp": "2025-04-05 16:54:37"
-    },
-    {
-        "amount": 66.0,
-        "initial_currency": "DOT",
-        "target_currency": "USD",
-        "converted_amount": 267.49,
-        "timestamp": "2025-04-05 17:01:43"
-    },
-    {
-        "amount": 55.0,
-        "initial_currency": "USD",
-        "target_currency": "EUR",
-        "converted_amount": 50.12,
-        "timestamp": "2025-04-05 17:15:22"
-    },
-    {
-        "amount": 5599.0,
-        "initial_currency": "USD",
-        "target_currency": "EUR",
-        "converted_amount": 5102.26,
-        "timestamp": "2025-04-05 17:15:30"
-    },
-    {
-        "amount": 5599.0,
-        "initial_currency": "USD",
-        "target_currency": "EUR",
-        "converted_amount": 5102.26,
-        "timestamp": "2025-04-05 17:15:33"
-    },
-    {
-        "amount": 5599.0,
-        "initial_currency": "USD",
-        "target_currency": "EUR",
-        "converted_amount": 5102.26,
-        "timestamp": "2025-04-05 17:15:38"
-    },
-    {
-        "amount": 66.0,
-        "initial_currency": "USD",
-        "target_currency": "EUR",
-        "converted_amount": 60.14,
-        "timestamp": "2025-04-05 17:16:07"
-    },
-    {
-        "amount": 66.0,
-        "initial_currency": "USD",
-        "target_currency": "EUR",
-        "converted_amount": 60.14,
-        "timestamp": "2025-04-05 17:16:16"
-    },
-    {
-        "amount": 77.0,
-        "initial_currency": "USD",
-        "target_currency": "EUR",
-        "converted_amount": 70.17,
-        "timestamp": "2025-04-05 17:16:51"
-    },
-    {
-        "amount": 655.0,
-        "initial_currency": "USD",
-        "target_currency": "EUR",
-        "converted_amount": 596.89,
-        "timestamp": "2025-04-05 17:17:19"
-    },
-    {
-        "amount": 44.0,
-        "initial_currency": "USD",
-        "target_currency": "EUR",
-        "converted_amount": 40.1,
-        "timestamp": "2025-04-05 18:05:03"
-    },
-    {
-        "amount": 44.0,
-        "initial_currency": "USD",
-        "target_currency": "EUR",
-        "converted_amount": 40.1,
-        "timestamp": "2025-04-05 18:05:09"
-    },
-    {
-        "amount": 44.0,
-        "initial_currency": "USD",
-        "target_currency": "EUR",
-        "converted_amount": 40.1,
-        "timestamp": "2025-04-05 18:05:13"
-    },
-    {
-        "amount": 44.0,
-        "initial_currency": "USD",
-        "target_currency": "EUR",
-        "converted_amount": 40.1,
-        "timestamp": "2025-04-05 18:05:16"
-    },
-    {
-        "amount": 44.0,
-        "initial_currency": "USD",
-        "target_currency": "EUR",
-        "converted_amount": 40.1,
-        "timestamp": "2025-04-05 18:05:21"
-    },
-    {
-        "amount": 67.0,
-        "initial_currency": "USD",
-        "target_currency": "EUR",
-        "converted_amount": 61.06,
-        "timestamp": "2025-04-05 18:09:43"
-    },
-    {
-        "amount": 67.0,
-        "initial_currency": "USD",
-        "target_currency": "EUR",
-        "converted_amount": 61.06,
-        "timestamp": "2025-04-05 18:09:47"
-    },
-    {
-        "amount": 67.0,
-        "initial_currency": "USD",
-        "target_currency": "EUR",
-        "converted_amount": 61.06,
-        "timestamp": "2025-04-05 18:09:52"
-    },
-    {
-        "amount": 67.0,
-        "initial_currency": "USD",
-        "target_currency": "EUR",
-        "converted_amount": 61.06,
-        "timestamp": "2025-04-05 18:14:14"
-    },
-    {
-        "amount": 67.0,
-        "initial_currency": "USD",
-        "target_currency": "EUR",
-        "converted_amount": 61.06,
-        "timestamp": "2025-04-05 18:14:17"
-    },
-    {
-        "amount": 67.0,
-        "initial_currency": "USD",
-        "target_currency": "EUR",
-        "converted_amount": 61.06,
-        "timestamp": "2025-04-05 18:14:21"
-    },
-    {
-        "amount": 67.0,
-        "initial_currency": "USD",
-        "target_currency": "EUR",
-        "converted_amount": 61.06,
-        "timestamp": "2025-04-05 18:14:24"
-    },
-    {
-        "amount": 67.0,
-        "initial_currency": "USD",
-        "target_currency": "EUR",
-        "converted_amount": 61.06,
-        "timestamp": "2025-04-05 18:14:25"
-    },
-    {
-        "amount": 67.0,
-        "initial_currency": "USD",
-        "target_currency": "EUR",
-        "converted_amount": 61.06,
-        "timestamp": "2025-04-05 18:14:57"
-    },
-    {
-        "amount": 9.0,
-        "initial_currency": "USD",
-        "target_currency": "EUR",
-        "converted_amount": 8.2,
-        "timestamp": "2025-04-05 18:15:47"
-    },
-    {
-        "amount": 9.0,
-        "initial_currency": "USD",
-        "target_currency": "EUR",
-        "converted_amount": 8.2,
-        "timestamp": "2025-04-05 18:15:50"
-    },
-    {
-        "amount": 5.0,
-        "initial_currency": "USD",
-        "target_currency": "EUR",
-        "converted_amount": 4.56,
-        "timestamp": "2025-04-05 18:16:20"
-    },
-    {
-        "amount": 788.0,
-        "initial_currency": "USD",
-        "target_currency": "EUR",
-        "converted_amount": 718.09,
-        "timestamp": "2025-04-05 18:33:18"
-    },
-    {
-        "amount": 576.0,
-        "initial_currency": "USD",
-        "target_currency": "EUR",
-        "converted_amount": 524.9,
-        "timestamp": "2025-04-05 18:34:20"
-    },
-    {
-        "amount": 576.0,
-        "initial_currency": "USD",
-        "target_currency": "EUR",
-        "converted_amount": 524.9,
-        "timestamp": "2025-04-05 18:34:23"
-    },
-    {
-        "amount": 576.0,
-        "initial_currency": "USD",
-        "target_currency": "EUR",
-        "converted_amount": 524.9,
-        "timestamp": "2025-04-05 18:34:26"
-    },
-    {
-        "amount": 576.0,
-        "initial_currency": "USD",
-        "target_currency": "EUR",
-        "converted_amount": 524.9,
-        "timestamp": "2025-04-05 18:34:30"
-    },
-    {
-        "amount": 98.0,
-        "initial_currency": "USD",
-        "target_currency": "EUR",
-        "converted_amount": 89.31,
-        "timestamp": "2025-04-05 18:35:30"
-    },
-    {
-        "amount": 655.0,
-        "initial_currency": "USD",
-        "target_currency": "EUR",
-        "converted_amount": 596.89,
-        "timestamp": "2025-04-05 19:01:02"
-    },
-    {
-        "amount": 566.0,
-        "initial_currency": "USD",
-        "target_currency": "EUR",
-        "converted_amount": 515.78,
-        "timestamp": "2025-04-05 20:21:21"
-    },
-    {
-        "amount": 55.0,
-        "initial_currency": "USD",
-        "target_currency": "EUR",
-        "converted_amount": 50.38,
-        "timestamp": "2025-04-08 03:05:57"
-    },
-    {
-        "amount": 631.0,
-        "initial_currency": "USD",
-        "target_currency": "EUR",
-        "converted_amount": 578.0,
-        "timestamp": "2025-04-08 03:06:07"
-    },
-    {
-        "amount": 631.0,
-        "initial_currency": "USD",
-        "target_currency": "EUR",
-        "converted_amount": 578.0,
-        "timestamp": "2025-04-08 03:06:09"
-    },
-    {
-        "amount": 666.0,
-        "initial_currency": "USD",
-        "target_currency": "EUR",
-        "converted_amount": 610.06,
-        "timestamp": "2025-04-08 03:13:12"
-    },
-    {
-        "amount": 666.0,
-        "initial_currency": "USD",
-        "target_currency": "EUR",
-        "converted_amount": 610.06,
-        "timestamp": "2025-04-08 03:13:16"
-    },
-    {
-        "amount": 98.0,
-        "initial_currency": "USD",
-        "target_currency": "EUR",
-        "converted_amount": 89.77,
-        "timestamp": "2025-04-08 03:13:57"
-    },
-    {
-        "amount": 98.0,
-        "initial_currency": "USD",
-        "target_currency": "EUR",
-        "converted_amount": 89.77,
-        "timestamp": "2025-04-08 03:13:59"
-    },
-    {
-        "amount": 98.0,
-        "initial_currency": "USD",
-        "target_currency": "EUR",
-        "converted_amount": 89.77,
-        "timestamp": "2025-04-08 03:14:01"
-    },
-    {
-        "amount": 98.0,
-        "initial_currency": "USD",
-        "target_currency": "EUR",
-        "converted_amount": 89.77,
-        "timestamp": "2025-04-08 03:14:14"
-    },
-    {
-        "amount": 741.26,
-        "initial_currency": "USD",
-        "target_currency": "EUR",
-        "converted_amount": 679.0,
-        "timestamp": "2025-04-08 03:14:51"
-    },
-    {
-        "amount": 90.0,
-        "initial_currency": "USD",
-        "target_currency": "EUR",
-        "converted_amount": 82.44,
-        "timestamp": "2025-04-08 03:24:28"
-    },
-    {
-        "amount": 90.0,
-        "initial_currency": "USD",
-        "target_currency": "EUR",
-        "converted_amount": 82.44,
-        "timestamp": "2025-04-08 03:24:33"
+        "target_currency": "GHS",
+        "converted_amount": 926.94,
+        "timestamp": "2025-04-12 18:41:54"
     }
 ]
