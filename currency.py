@@ -417,7 +417,7 @@ def clear_history():
 # ---------------------------
 icon = ctk.CTkImage(light_image=Image.open("images/history_icon.png"), size=(20, 20))
 history_button = ctk.CTkButton(app, text="History", command=show_history, fg_color="#FCFBFB",
-                               hover_color="darkblue", text_color="black", image=icon, compound="left")
+                                text_color="black", image=icon, compound="left")
 history_button.place(x=0, y=10)
 
 # ---------------------------
