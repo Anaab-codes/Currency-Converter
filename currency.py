@@ -33,7 +33,13 @@ icon_photo = ImageTk.PhotoImage(icon_img)
 app.iconphoto(False, icon_photo)
 
 
+# MODE STATES
+# ----------------------
+mode = tk.StringVar(value="image")  # options: image / floating / plain
 
+
+# BACKGROUND IMAGE
+# ----------------------
 # # # # Load the background image
 bg_image = ctk.CTkImage(light_image=Image.open("images/background_icon.jpg"), 
                         dark_image=Image.open("images/background_icon.jpg"), 
@@ -44,51 +50,98 @@ bg_label = ctk.CTkLabel(app, image=bg_image, text="")
 bg_label.place(x=0, y=0, relwidth=1, relheight=1)  # Cover full window
 
 
-
+# FLOATING BACKGROUND
+# ----------------------
 # Create Canvas for Background Animation
-# canvas = tk.Canvas(app, width=700, height=400, bg="#F4F4F4", highlightthickness=0)
-# canvas.pack(fill="both", expand=True)
+canvas = tk.Canvas(app, width=700, height=400, bg="#F4F4F4", highlightthickness=0)
+canvas.pack(fill="both", expand=True)
 
-# # List of Currency Symbols
-# currency_symbols = ["$", "€", "¥", "£", "₿", "₹", "₩", "₦"]
+# List of Currency Symbols
+currency_symbols = ["$", "€", "¥", "£", "₿", "₹", "₩", "₦"]
 
-# # Store floating items with direction values
-# floating_icons = []
+# Store floating items with direction values
+floating_icons = []
 
-# for _ in range(25):  # Number of icons
-#     x = random.randint(50, 650)
-#     y = random.randint(50, 350)
-#     size = random.randint(25, 50)
-#     color = random.choice(["#FFD700", "#C0C0C0", "#DAA520"])  # Expensive colors
+for _ in range(25):  # Number of icons
+    x = random.randint(50, 650)
+    y = random.randint(50, 350)
+    size = random.randint(25, 50)
+    color = random.choice(["#FFD700", "#C0C0C0", "#DAA520"])  # Expensive colors
     
-#     symbol = random.choice(currency_symbols)
-#     text_id = canvas.create_text(x, y, text=symbol, font=("Arial", size, "bold"), fill=color)
+    symbol = random.choice(currency_symbols)
+    text_id = canvas.create_text(x, y, text=symbol, font=("Arial", size, "bold"), fill=color)
     
-#     dx = random.choice([-1, 1]) * random.uniform(0.5, 1.5)
-#     dy = random.choice([-1, 1]) * random.uniform(0.5, 1.5)
+    dx = random.choice([-1, 1]) * random.uniform(0.5, 1.5)
+    dy = random.choice([-1, 1]) * random.uniform(0.5, 1.5)
     
-#     floating_icons.append({"id": text_id, "dx": dx, "dy": dy})
+    floating_icons.append({"id": text_id, "dx": dx, "dy": dy})
 
-# # Animate Floating Icons
-# def animate_icons():
-#     for icon in floating_icons:
-#         text_id = icon["id"]
-#         dx = icon["dx"]
-#         dy = icon["dy"]
+# Animate Floating Icons
+def animate_icons():
+    if mode.get() == "floating":  # Only animate in floating mode
+        for icon in floating_icons:
+            text_id = icon["id"]
+            dx, dy = icon["dx"], icon["dy"]
+            canvas.move(text_id, dx, dy)
+            x, y = canvas.coords(text_id)
+
+            if x < 0 or x > 700:
+                icon["dx"] *= -1
+            if y < 0 or y > 500:
+                icon["dy"] *= -1
+    app.after(30, animate_icons) # Persistent animation loop
+
+animate_icons()
+
+
+# TOGGLE FUNCTION
+# ----------------------
+def switch_mode():
+    current = mode.get()
+    if current == "image":
+        # Switch to Floating
+        bg_label.place_forget()
+        canvas.pack(fill="both", expand=True)
+        mode.set("floating")
+        toggle_btn.configure(text="Switch to Plain Mode")
+        theme_btn.configure(state="disabled")  # disable theme button
+
+    elif current == "floating":
+        # Switch to Plain
+        canvas.pack_forget()
+        app.configure(fg_color="white")
+        mode.set("plain")
+        toggle_btn.configure(text="Switch to Image Mode")
+        theme_btn.configure(state="normal")  # enable theme button
+
+    else:  # Plain → back to Image
+        # Always force light mode for image
+        ctk.set_appearance_mode("Light")  
+        app.configure(fg_color="white")
+
+        bg_label.place(x=0, y=0, relwidth=1, relheight=1)
+        mode.set("image")
+        toggle_btn.configure(text="Switch to Floating Mode")
+        theme_btn.configure(state="disabled")  # disable theme button
         
-#         canvas.move(text_id, dx, dy)
-#         x, y = canvas.coords(text_id)
+        
+# LIGHT/DARK TOGGLE
+# ----------------------
+def switch_theme():
+    if mode.get() == "plain":  # Only allow in plain mode
+        if ctk.get_appearance_mode() == "Light":
+            ctk.set_appearance_mode("Dark")
+        else:
+            ctk.set_appearance_mode("Light")
+        
 
-#         # Bounce horizontally
-#         if x < 0 or x > 700:
-#             icon["dx"] *= -1
-#         # Bounce vertically
-#         if y < 0 or y > 400:
-#             icon["dy"] *= -1
+toggle_btn = ctk.CTkButton(app, text="Switch to Floating Mode", command=switch_mode, fg_color="#FCFBFB", text_color="black")
+toggle_btn.place(x=200, y=10)
 
-#     app.after(30, animate_icons)  # Persistent animation loop
-
-# animate_icons()
+theme_btn = ctk.CTkButton(app, text="Toggle Theme", command=switch_theme, state="disabled", fg_color="#FCFBFB", text_color="black")
+theme_btn.place(x=400, y=10)
+      
+        
 
 # ---------------------------
 # Load Custom Data from JSON file
