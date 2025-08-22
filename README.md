@@ -10,6 +10,10 @@ A sleek and responsive Currency Converter app that allows users to convert curre
 - 🔎 **Searchable Dropdowns** – Quickly find and select currencies
 - 🕓 **Conversion History** – View and clear past conversions
 - 📱 **Responsive UI** – Mobile-friendly design or GUI layout
+- 🎨 Toggle System – Choose between:
+    • Plain Mode – Light/Dark themes
+    • Image Mode – Static background image (always light)
+    • Floating Mode – Animated floating currency symbols
 
 ---
 
