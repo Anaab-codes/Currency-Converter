@@ -10,6 +10,7 @@ from tkinter import PhotoImage
 from PIL import Image, ImageTk, ImageSequence
 import random
 from tkinter import messagebox
+import matplotlib.pyplot as plt
 
 # ---------------------------
 # UI Components
@@ -361,6 +362,37 @@ def convert(event=None, store_history=False):
         frame_label.lower()
         convert_button.configure(state="normal")
 
+# Chart Functionality
+# ---------------------------
+def show_chart():
+    if not conversion_history:
+        messagebox.showinfo("No Data", "No conversions to display in chart.")
+        return
+
+    # Extract data
+    labels = [f"{entry['initial_currency']}→{entry['target_currency']}" for entry in conversion_history]
+    amounts = [entry["amount"] for entry in conversion_history]
+    converted = [entry["converted_amount"] for entry in conversion_history]
+
+    # Create chart
+    plt.figure(figsize=(8, 5))
+    bar_width = 0.4
+    x = range(len(conversion_history))
+
+    plt.bar(x, amounts, width=bar_width, label="Original Amount")
+    plt.bar([i + bar_width for i in x], converted, width=bar_width, label="Converted Amount")
+
+    plt.xticks([i + bar_width/2 for i in x], labels, rotation=45, ha="right")
+    plt.xlabel("Conversions")
+    plt.ylabel("Amount")
+    plt.title("Currency Conversion History Chart")
+    plt.legend()
+    plt.tight_layout()
+    plt.show()
+
+
+
+
 # ---------------------------
 # Toggle Data Source Functionality
 # ---------------------------
@@ -471,7 +503,17 @@ def clear_history():
 icon = ctk.CTkImage(light_image=Image.open("images/history_icon.png"), size=(20, 20))
 history_button = ctk.CTkButton(app, text="History", command=show_history, fg_color="#FCFBFB",
                                 text_color="black", image=icon, compound="left")
-history_button.place(x=0, y=10)
+history_button.place(x=0, y=450)
+
+
+# Chart Button Setup
+# ---------------------------
+chart_icon = ctk.CTkImage(light_image=Image.open("images/chart_icon.png"), size=(20, 20))
+chart_button = ctk.CTkButton(app, text="Show Chart", command=show_chart, fg_color="#FCFBFB",
+                              text_color="black", image=chart_icon, compound="left")
+chart_button.place(x=170, y=450)
+
+
 
 # ---------------------------
 # UI Elements
