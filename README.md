@@ -9,6 +9,7 @@ A sleek and responsive Currency Converter app that allows users to convert curre
 - 🌐 **Real-Time Exchange Rates** – Updated via a currency API
 - 🔎 **Searchable Dropdowns** – Quickly find and select currencies
 - 🕓 **Conversion History** – View and clear past conversions
+- 📈 Exchange Rate History Chart – Visualize history charts for selected currencies 
 - 📱 **Responsive UI** – Mobile-friendly design or GUI layout
 - 🎨 Toggle System – Choose between:
     • Plain Mode – Light/Dark themes

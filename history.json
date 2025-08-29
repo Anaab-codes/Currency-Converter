@@ -1,16 +1,1 @@
-[
-    {
-        "amount": 55.0,
-        "initial_currency": "USD",
-        "target_currency": "EUR",
-        "converted_amount": 47.23,
-        "timestamp": "2025-08-27 04:20:01"
-    },
-    {
-        "amount": 55.0,
-        "initial_currency": "GHS",
-        "target_currency": "EUR",
-        "converted_amount": 4.25,
-        "timestamp": "2025-08-27 04:20:28"
-    }
-]
+[]
